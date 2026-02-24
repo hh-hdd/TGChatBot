@@ -317,7 +317,7 @@ export default {
       if (userState.is_blocked) {
         await sendMessageToUser(chatId, `⛔️ *消息已被拒收*\n\n` +
           `很抱歉 由于您的不当行为\n` +
-          `凉心已将您关入小黑屋\n` +
+          `机器人已将您关入小黑屋\n` +
           `暂时无法继续对话\n\n` +
           `TAT`);
         return;
@@ -416,7 +416,7 @@ export default {
         }
 
         const successMessage = await getVerificationSuccessMessage();
-        await sendMessageToUser(chatId, `👋 *这是号多多机器人客服*\n\n` +
+        await sendMessageToUser(chatId, `👋 *这是【号多多】机器人客服*\n\n` +
               `📝 稳住，别急。人工客服看到，会马上会为你处理\n` +
               `⏱ 管理员看到消息会及时回复\n\n` +
               `*温馨提示：为快速处理问题，请先提供：订单号、问题截图、文字描述\n` +
@@ -831,7 +831,7 @@ export default {
             .run();
 
           const successMessage = await getVerificationSuccessMessage();
-          await sendMessageToUser(chatId, `${successMessage}\n恭喜您通过了验证！现在可以和凉心聊天啦～`);
+          await sendMessageToUser(chatId, `${successMessage}\n恭喜您通过了验证！现在可以和客服聊天啦～`);
           const userInfo = await getUserInfo(chatId);
           await ensureUserTopic(chatId, userInfo);
         } else {
