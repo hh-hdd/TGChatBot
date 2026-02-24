@@ -417,10 +417,12 @@ export default {
 
         const successMessage = await getVerificationSuccessMessage();
         await sendMessageToUser(chatId, `👋 *这是【号多多】机器人客服*\n\n` +
-              `📝 稳住，别急。人工客服看到，会马上会为你处理\n` +
-              `⏱ 管理员看到消息会及时回复\n\n` +
-              `*温馨提示：为快速处理问题，请先提供：订单号、问题截图、文字描述\n` +
-             `避免重复发送相同消息*`);
+              `📝 老板，稳住，别急！\n` +
+              `⏱ 马上会为您处理\n\n` +
+              `*温馨提示：\n` +
+               `为快速处理问题\nn` +
+               `请提供：订单号、原始卡密、问题截图、文字描述\n` +
+             `不要重复发送相同消息*`);
         const userInfo = await getUserInfo(chatId);
         await ensureUserTopic(chatId, userInfo);
         return;
