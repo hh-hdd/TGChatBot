@@ -416,10 +416,11 @@ export default {
         }
 
         const successMessage = await getVerificationSuccessMessage();
-        await sendMessageToUser(chatId, `👋 *欢迎使用凉心的传话筒*\n\n` +
-              `📝 请使用礼貌用语进行对话\n` +
+        await sendMessageToUser(chatId, `👋 *这是号多多机器人客服*\n\n` +
+              `📝 稳住，别急。人工客服看到，会马上会为你处理\n` +
               `⏱ 管理员看到消息会及时回复\n\n` +
-              `*温馨提示：请保持耐心，避免重复发送相同消息*`);
+              `*温馨提示：为快速处理问题，请先提供：订单号、问题截图、文字描述\n` +
+             `避免重复发送相同消息*`);
         const userInfo = await getUserInfo(chatId);
         await ensureUserTopic(chatId, userInfo);
         return;
@@ -867,7 +868,7 @@ export default {
           await env.D1.prepare('INSERT OR REPLACE INTO user_states (chat_id, is_blocked) VALUES (?, ?)')
             .bind(privateChatId, true)
             .run();
-          await sendMessageToTopic(topicId, `✅ *操作成功*\n\`${privateChatId}\` 已被凉心关入小黑屋\n消息将不再转发`);
+          await sendMessageToTopic(topicId, `✅ *操作成功*\n\`${privateChatId}\` 已被号多多机器人关入小黑屋\n消息将不再转发`);
         } else if (action === 'unblock') {
           let state = userStateCache.get(privateChatId);
           if (state === undefined) {
@@ -881,7 +882,7 @@ export default {
           await env.D1.prepare('INSERT OR REPLACE INTO user_states (chat_id, is_blocked, is_first_verification) VALUES (?, ?, ?)')
             .bind(privateChatId, false, true)
             .run();
-          await sendMessageToTopic(topicId, `✅ *操作成功*\n凉心把 \`${privateChatId}\` 从小黑屋中放了出来\n消息将继续转发`);
+          await sendMessageToTopic(topicId, `✅ *操作成功*\n号多多机器人 \`${privateChatId}\` 从小黑屋中放了出来\n消息将继续转发`);
         } else if (action === 'toggle_verification') {
           const currentState = (await getSetting('verification_enabled', env.D1)) === 'true';
           const newState = !currentState;
