@@ -9,6 +9,6 @@ database_name = "tgchatbot-db"
 database_id = "c27e27f3-c094-4222-8c6e-91e6a04c3d56"    
 
 [vars]
-BOT_TOKEN_ENV = "8419640607:AAGUvLYRkDzpwO9y4Mu1cPK4dwjgpAuwqVw"
+BOT_TOKEN_ENV = "8612044088:AAFI04Rk6-xIs_rAqeup7X2lHtQHiZCtH_o"
 GROUP_ID_ENV = "-1003402435319"              
-MAX_MESSAGES_PER_MINUTE_ENV = "40"       
+MAX_MESSAGES_PER_MINUTE_ENV = "30"       
