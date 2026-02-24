@@ -1,14 +1,14 @@
-name = "dbchatbot"                  # 您的 Worker 名称（可自定义）
-main = "_worker.js"                    # 入口文件（您的仓库中已有 _worker.js）
-compatibility_date = "2026-02-24"      # 使用当前日期
+name = "dbchatbot"                  
+main = "_worker.js"                    
+compatibility_date = "2026-02-24"      
 
-# 配置 D1 数据库（您已经创建好的）
+# D1 数据库绑定（您已经创建好的）
 [[d1_databases]]
-binding = "DB"                          # 在 _worker.js 中使用的变量名
-database_name = "tgchatbot-db"         # 替换为您的 D1 数据库名称
-database_id = "c27e27f3-c094-4222-8c6e-91e6a04c3d56"             # 替换为您的 D1 数据库 ID
+binding = "D1"                          
+database_name = "tgchatbot-db"         
+database_id = "c27e27f3-c094-4222-8c6e-91e6a04c3d56"    
 
-# 环境变量（Telegram 机器人的 Token 和管理员 ID）
 [vars]
-BOT_TOKEN = "8419640607:AAGUvLYRkDzpwO9y4Mu1cPK4dwjgpAuwqVw"            # 例如 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11
-ADMIN_ID = "6461550392"          # 例如 123456789（获取方法见下文）
+BOT_TOKEN_ENV = "8419640607:AAGUvLYRkDzpwO9y4Mu1cPK4dwjgpAuwqVw"
+GROUP_ID_ENV = "-1003402435319"              
+MAX_MESSAGES_PER_MINUTE_ENV = "40"       
